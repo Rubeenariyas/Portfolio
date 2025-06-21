@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rubeena Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .home {
+      min-height: 100vh;
+      background-image: url(images/lines.webp);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      color: antiquewhite;
+    }
+
+    .intro {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    span {
+      color: green;
+    }
+
+    .navbar {
+      background-color: transparent;
+    }
+
+    .navbar-brand {
+      color: aliceblue !important;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      justify-content: space-between;
+    }
+
+    .navbar-brand img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 9px;
+    }
+
+    .nav-link {
+      color: aliceblue !important;
+      padding: 1px 300px;
+    }
+
+    .btn a {
+      color: white;
+      text-decoration: none;
+      
+    }
+    
+
+    .btn {
+      background-color: #28a745;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+    }
+    .container-fluid{
+      min-height: 100vh;
+      background-color: black;
+    }
+    .about{
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  
+  <div class="home">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="images/IMG_E8377.JPG" alt="Profile">
+          Rubeena M R
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Intro Section -->
+    <div class="intro">
+      <h1>Hey, I'm Rubeena</h1>
+      <p>
+        Experienced web developer who <span>enjoys</span> building
+        <span>fast</span> and <span>accessible</span> digital products.
+      </p>
+      <button class="btn">
+        <a href="#">About Me</a>
+      </button>
+    </div>
+  </div>
+  
+
+  <div class="container-fluid">
+    <div class="about">
+      <h2>About Me</h2>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
