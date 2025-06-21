@@ -9,7 +9,8 @@
     integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 
   <style>
-    body, html {
+    body,
+    html {
       margin: 0;
       padding: 0;
       height: 100%;
@@ -65,9 +66,9 @@
     .btn a {
       color: white;
       text-decoration: none;
-      
+
     }
-    
+
 
     .btn {
       background-color: #28a745;
@@ -75,19 +76,74 @@
       padding: 10px 20px;
       margin-top: 20px;
     }
-    .container-fluid{
+
+    .container-fluid {
       min-height: 100vh;
       background-color: black;
     }
-    .about{
+
+    .about {
       color: white;
       text-align: center;
+    }
+
+    .about-sub {
+      font-size: 1.25rem;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .get-me {
+      font-family: Space Mono, monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      display: flex;
+
+      /* margin: 0 700px; */
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      font-size: 1rem;
+      gap: 10vh;
+      justify-content: left;
+      align-items: left;
+      padding: 0 200px;
+    }
+
+    .about-su {
+      display: flex;
+      flex-direction: column;
+      padding: 40px 9px 0 250px;
+      width: 50vw;
+
+
+        
+
+
+
+    }
+
+    .toolkit {
+      width: 100px;
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      text-align: center;
+      margin: 20px;
+      border-radius: 19px;
+    }
+
+    p {
+      color: aliceblue;
     }
   </style>
 </head>
 
 <body>
-  
+
   <div class="home">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
@@ -96,9 +152,8 @@
           <img src="images/IMG_E8377.JPG" alt="Profile">
           Rubeena M R
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -130,18 +185,69 @@
       </button>
     </div>
   </div>
-  
 
+
+
+
+  <!-- about -->
   <div class="container-fluid">
     <div class="about">
       <h2>About Me</h2>
-
     </div>
-  </div>
+    <div class="about-sub">
+      <h6>
+        Building software for <span>20</span> years</h6>
+    </div>
+    <div style="display: flex;">
+      <div class="about-su">
+        <div class="get-me">
+          Get to know me!
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-    crossorigin="anonymous"></script>
+        </div>
+        <div>
+          <p>Hi, I’m Rubeena M R, a passionate and motivated web developer with a strong interest in creating modern,
+            responsive, and user-friendly websites. I specialize in the MEARN stack (MongoDB, Express.js, Angular/React,
+            Node.js) and enjoy building projects that combine creativity and functionality. <br>
+
+            As a fresher, I am continuously learning and improving my skills through hands-on projects, online courses,
+            and personal challenges. I believe in writing clean code, understanding user needs, and delivering solutions
+            that are both practical and beautiful. <br>
+
+            Currently, I’m looking for opportunities to start my career as a junior web developer in Dubai. I’m excited
+            to
+            join a dynamic team where I can contribute, grow, and make a real impact in the world of web development.
+            <br>
+          </p>
+        </div>
+
+      </div>
+      <div style="display: flex;flex-direction: column;">
+        <div class="about-su">
+          <div class="get-me">
+            My toolkit
+          </div>
+          <div style="display:flex;flex-direction: row;">
+            <div>
+              <button class="toolkit">HTML</button>
+              <button class="toolkit">CSS</button>
+            </div>
+            <div>
+              <button class="toolkit">PHP</button>
+              <button class="toolkit">MYSQL</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
