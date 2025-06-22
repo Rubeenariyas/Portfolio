@@ -2,252 +2,329 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rubeena Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
 
   <style>
-    body,
-    html {
+    html,
+    body {
       margin: 0;
       padding: 0;
       height: 100%;
       width: 100%;
+      overflow-x: hidden;
+      perspective: 1000px;
+
     }
 
     .home {
+      position: relative;
       min-height: 100vh;
-      background-image: url(images/lines.webp);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      color: antiquewhite;
+      background: url(images/lines.webp) no-repeat center center/cover;
+      transform-style: preserve-3d;
+    }
+
+    .home::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
     }
 
     .intro {
-      min-height: 90vh;
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
+      color: antiquewhite;
+      transform: translateZ(30px);
+      transition: transform 0.5s ease;
     }
 
-    span {
-      color: green;
+    .intro:hover {
+      transform: translateZ(60px);
     }
 
     .navbar {
       background-color: transparent;
+      z-index: 3;
     }
 
     .navbar-brand {
       color: aliceblue !important;
       display: flex;
       align-items: center;
-      gap: 5px;
-      justify-content: space-between;
+      gap: 10px;
     }
 
     .navbar-brand img {
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      margin-right: 9px;
     }
 
     .nav-link {
       color: aliceblue !important;
-      padding: 1px 300px;
     }
-
-    .btn a {
-      color: white;
-      text-decoration: none;
-
-    }
-
 
     .btn {
       background-color: #28a745;
       border: none;
       padding: 10px 20px;
       margin-top: 20px;
-    }
-
-    .container-fluid {
-      min-height: 100vh;
-      background-color: black;
-    }
-
-    .about {
-      color: white;
-      text-align: center;
-    }
-
-    .about-sub {
-      font-size: 1.25rem;
-      font-style: italic;
-      text-align: center;
-    }
-
-    .get-me {
+      box-shadow: 0 4px 15px rgba(0, 255, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin: 30px;
       font-family: Space Mono, monospace;
-      font-size: 1.5rem;
-      font-weight: 700;
+      gap: 30px;
+    }
+
+    .btn a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 255, 0, 0.4);
+    }
+
+    .section {
+      min-height: 100vh;
+      background: #000;
       color: white;
       display: flex;
-
-      /* margin: 0 700px; */
-    }
-
-    .content-wrapper {
-      display: flex;
       flex-direction: column;
-      font-size: 1rem;
-      gap: 10vh;
-      justify-content: left;
-      align-items: left;
-      padding: 0 200px;
-    }
-
-    .about-su {
-      display: flex;
-      flex-direction: column;
-      padding: 40px 9px 0 250px;
-      width: 50vw;
-
-
-        
-
-
-
-    }
-
-    .toolkit {
-      width: 100px;
-      display: flex;
-      gap: 20px;
-      padding: 20px;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      margin: 20px;
-      border-radius: 19px;
+      transition: transform 0.3s ease;
+      
     }
 
-    p {
+    .section:hover {
+      transform: scale(1.02);
+    }
+
+    .toolkit,
+    .toolkit-pro,
+    .toolkit-Mysql {
+      background-color: #343a40;
       color: aliceblue;
+      border: white 2px solid;
+      border-radius: 5px;
+      font-family: monospace;
+      font-weight: 700;
+      padding: 0.75rem 1rem;
+      margin: 10px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .toolkit:hover,
+    .toolkit-pro:hover,
+    .toolkit-Mysql:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+
+    .project-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      background-color: #111;
+      border-radius: 10px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .project {
+      margin-top: 5rem;
+      display: flex;
+    }
+
+    .college {
+      width: 60vw;
+      max-height: 40vh;
+      object-fit: fill;
+      border-radius: 10px;
+      margin-top: 10px;
+      opacity: 0.85;
+    }
+    .colleges{
+        width: 40vw;
+      max-height: 70vh;
+      object-fit: fill;
+      border-radius: 10px;
+      margin-top: 10px;
+      opacity: 0.85;
+    }
+    .font{
+            font-family: Space Mono, monospace;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- Home -->
   <div class="home">
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
       <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="images/IMG_E8377.JPG" alt="Profile">
-          Rubeena M R
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#"><img src="images/IMG_E8377.JPG" alt="Profile" />Rubeena M R</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navItems">
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
+        <div class="collapse navbar-collapse" id="navItems">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link btn" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link btn" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link btn" href="#contact">Contact</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Intro Section -->
     <div class="intro">
-      <h1>Hey, I'm Rubeena</h1>
-      <p>
-        Experienced web developer who <span>enjoys</span> building
-        <span>fast</span> and <span>accessible</span> digital products.
-      </p>
-      <button class="btn">
-        <a href="#">About Me</a>
-      </button>
+      <h1 class="font">Hey, I'm Rubeena</h1>
+      <p>Experienced web developer who <span style="color: green;">enjoys</span> building <span
+          style="color: green;">fast</span> and <span style="color: green;">accessible</span> digital products.</p>
+      <button class="btn"><a href="#about">About Me</a></button>
     </div>
   </div>
 
-
-
-
-  <!-- about -->
-  <div class="container-fluid">
-    <div class="about">
-      <h2>About Me</h2>
-    </div>
-    <div class="about-sub">
-      <h6>
-        Building software for <span>20</span> years</h6>
-    </div>
+  <!-- About Section -->
+  <div id="about" class="section">
+    <h2 class="font">About Me</h2>
+    <p style="max-width: 800px;">
+      I'm Rubeena M R, a passionate and motivated web developer with a strong interest in creating modern, responsive,
+      and user-friendly websites. I specialize in the MEARN stack and enjoy building projects that combine creativity
+      and functionality.<br><br>
+      As a fresher, I am constantly learning and improving through hands-on projects and online courses. Currently, I'm
+      seeking opportunities as a junior developer in Dubai.
+    </p>
     <div style="display: flex;">
-      <div class="about-su">
-        <div class="get-me">
-          Get to know me!
+      <button class=" btn">HTML</button>
+      <button class=" btn">CSS</button>
+      <button class="btn">JS</button>
+      <button class="btn">React</button>
+      <button class=" btn">Node.js</button>
+      <button class=" btn">MongoDB</button>
+    </div>
+  </div>
 
+  <!-- Projects Section -->
+  <div id="projects" class="section">
+    <h2 class="font">Projects</h2>
+    <div class="project-container">
+      <div class="project">
+        <div style="display: flex;flex-direction: column;">
+          <div>
+            <h3 class="font">College Management System</h3>
+          </div>
+          <div>
+            <p>A web-based application to manage administrative functions like student data, fee tracking, and more.</p>
+
+          </div>
+          <div>
+            <button class="toolkit-pro btn">HTML</button>
+            <button class="toolkit-pro btn">CSS</button>
+            <button class="toolkit-pro btn">PHP</button>
+            <button class="toolkit-pro btn">Bootstrap</button>
+            <button class="toolkit-pro ">MySQL</button>
+          </div>
+          <div>
+          <button class="btn">Know More</button>
         </div>
+        </div>
+
+        <img src="images/WhatsApp Image 2025-06-21 at 22.30.45_c0366a9c.jpg" alt="College Project" class="college" />
+      </div>
+      <!-- second project section -->
+    </div>
+    <div class="project-container">
+      <div class="project">
         <div>
-          <p>Hi, I’m Rubeena M R, a passionate and motivated web developer with a strong interest in creating modern,
-            responsive, and user-friendly websites. I specialize in the MEARN stack (MongoDB, Express.js, Angular/React,
-            Node.js) and enjoy building projects that combine creativity and functionality. <br>
+        <img src="images/Screenshot (154).png" alt="College Project" class="colleges" />
+      </div>
+        <div style="display: flex;flex-direction: column;">
+          
+          <div>
+            <h3 class="font">Look Live</h3>
+          </div>
+          <div>
+            <p>Look Live is a dynamic web-based eyewear store interface that showcases different categories like sunglasses, lenses, and eyewear collections using an engaging carousel layout.</p>
 
-            As a fresher, I am continuously learning and improving my skills through hands-on projects, online courses,
-            and personal challenges. I believe in writing clean code, understanding user needs, and delivering solutions
-            that are both practical and beautiful. <br>
+          </div>
+          <div>
+            <button class="toolkit-pro">HTML</button>
+            <button class="toolkit-pro">CSS</button>
+            <button class="toolkit-pro">Bootstrap</button>
+          </div>
+          <div>
+          <button class="btn">Know More</button>
+        </div>
+        </div>
+      
 
-            Currently, I’m looking for opportunities to start my career as a junior web developer in Dubai. I’m excited
-            to
-            join a dynamic team where I can contribute, grow, and make a real impact in the world of web development.
-            <br>
-          </p>
+    </div></div>
+    <!-- third project section -->
+     <div class="project-container">
+      <div class="project">
+        <div style="display: flex;flex-direction: column;">
+          <div>
+            <h3 class="font">Art E-Commerce</h3>
+          </div>
+          <div>
+            <p>Art E-Commerce is a dynamic and visually engaging online store that showcases and sells artwork.</p>
+
+          </div>
+          <div>
+            <button class="toolkit-pro btn">HTML</button>
+            <button class="toolkit-pro btn">CSS</button>
+            <button class="toolkit-pro btn">PHP</button>
+            <button class="toolkit-pro btn">Bootstrap</button>
+            <button class="toolkit-pro ">MySQL</button>
+          </div>
+          <div>
+          <button class="btn">Know More</button>
+        </div>
         </div>
 
+        <img src="images/WhatsApp Image 2025-06-22 at 12.14.59_95836cc5.jpg" alt="College Project" class="college" />
       </div>
-      <div style="display: flex;flex-direction: column;">
-        <div class="about-su">
-          <div class="get-me">
-            My toolkit
-          </div>
-          <div style="display:flex;flex-direction: row;">
-            <div>
-              <button class="toolkit">HTML</button>
-              <button class="toolkit">CSS</button>
-            </div>
-            <div>
-              <button class="toolkit">PHP</button>
-              <button class="toolkit">MYSQL</button>
-            </div>
-          </div>
+      
+  </div>
 
-        </div>
 
-      </div>
+</div>
 
 
 
 
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-        crossorigin="anonymous"></script>
+
+
+
+
+
+  <!-- Contact placeholder -->
+  <div id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Let's connect! You can reach me at <strong>rubeena@example.com</strong>.</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
